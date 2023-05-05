@@ -42,7 +42,8 @@ then
   cp -R "$INPUT_SOURCE_FILE" "$DEST_COPY"
 else
   echo "rsync mode detected"
-  rsync -avrh --delete --exclude="$INPUT_IGNORE_DIRECTORIES" "$INPUT_SOURCE_FILE" "$DEST_COPY"
+  DD="$INPUT_IGNORE_DIRECTORIES"
+  rsync -avrh --delete --exclude="$DD" "$INPUT_SOURCE_FILE" "$DEST_COPY"
 fi
 
 echo "Switch to clone dir"
