@@ -42,8 +42,7 @@ then
   cp -R "$INPUT_SOURCE_FILE" "$DEST_COPY"
 else
   echo "rsync mode detected"
-  DD="$INPUT_IGNORE_DIRECTORIES"
-  rsync -avrh --delete --exclude="$DD" "$INPUT_SOURCE_FILE" "$DEST_COPY"
+  rsync -avrh --delete --exclude="app/code/Infosys/Module1 app/code/Infosys/Module2" "$INPUT_SOURCE_FILE" "$DEST_COPY"
 fi
 
 echo "Switch to clone dir"
